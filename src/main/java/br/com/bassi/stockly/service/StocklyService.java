@@ -9,9 +9,11 @@ import java.io.IOException;
 public class StocklyService  {
 
     private final ReportService reportService;
+    private final PurchaseSectorService purchaseSectorService;
 
-    public StocklyService(ReportService reportService) {
+    public StocklyService(ReportService reportService, PurchaseSectorService purchaseSectorService) {
         this.reportService = reportService;
+        this.purchaseSectorService = purchaseSectorService;
     }
 
     public void process(String reportPath){
@@ -27,7 +29,7 @@ public class StocklyService  {
                     var reorderQuantity = calculateReorderQuantity(item);
 
                     //2 - para cada item do csv chamar a api do setor de compras
-
+                    purchaseSectorService.sendPurchaseRequest(item,reorderQuantity);
                     //3 - salvar no mysql os itens que foram recomprados
                 }
             });
