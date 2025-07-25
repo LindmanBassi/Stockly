@@ -1,7 +1,7 @@
-package br.com.bassi.smartstock.controller;
+package br.com.bassi.stockly.controller;
 
-import br.com.bassi.smartstock.controller.dto.StartDto;
-import br.com.bassi.smartstock.service.SmartStockService;
+import br.com.bassi.stockly.controller.dto.StartDto;
+import br.com.bassi.stockly.service.StocklyService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -12,17 +12,17 @@ import java.util.concurrent.CompletableFuture;
 @RestController
 public class StartController {
 
-    private final SmartStockService smartStockService;
+    private final StocklyService stocklyService;
 
-    public StartController(SmartStockService smartStockService) {
-        this.smartStockService = smartStockService;
+    public StartController(StocklyService stocklyService) {
+        this.stocklyService = stocklyService;
     }
 
     @PostMapping("/start")
     public ResponseEntity<Void> start(@RequestBody StartDto dto){
 
         CompletableFuture.runAsync(()->{ //utilizando threadh
-            smartStockService.process(dto.reportPath());
+            stocklyService.process(dto.reportPath());
         });
 
         return ResponseEntity.accepted().build();

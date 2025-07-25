@@ -1,15 +1,15 @@
-package br.com.bassi.smartstock.service;
+package br.com.bassi.stockly.service;
 
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 
 @Service
-public class SmartStockService  {
+public class StocklyService  {
 
     private final ReportService reportService;
 
-    public SmartStockService(ReportService reportService) {
+    public StocklyService(ReportService reportService) {
         this.reportService = reportService;
     }
 

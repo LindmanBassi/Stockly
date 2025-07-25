@@ -1,13 +1,13 @@
-package br.com.bassi.smartstock;
+package br.com.bassi.stockly;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SmartstockApplication {
+public class StocklyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SmartstockApplication.class, args);
+		SpringApplication.run(StocklyApplication.class, args);
 	}
 
 }

@@ -1,6 +1,6 @@
-package br.com.bassi.smartstock.service;
+package br.com.bassi.stockly.service;
 
-import br.com.bassi.smartstock.domain.CsvStockItem;
+import br.com.bassi.stockly.domain.CsvStockItem;
 import com.opencsv.bean.CsvToBeanBuilder;
 import org.springframework.stereotype.Service;
 

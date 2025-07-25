@@ -1,4 +1,4 @@
-package br.com.bassi.smartstock.domain;
+package br.com.bassi.stockly.domain;
 
 import com.opencsv.bean.CsvBindByName;
 
